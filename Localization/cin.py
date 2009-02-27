@@ -18,17 +18,34 @@
 # @license 'GPL'
 # @opensuse
 # @platform 'i386 amd64'
-# @child 'noseeing'
+# @child 'noseeing-inst'
 
-
+#import subprocess
 import os
 from string import Template
 import pygtk
 pygtk.require('2.0')
 import gtk 
 import commands
-import re
 
+def apply_im_setting(user_name,selected_cin,target="users"):
+      ims_cmd = "export INPUT_METHOD=\"%s\"" % (selected_cin)
+      if target == "users":
+          print "套用輸入法設定到" + user_name + "..."
+          user_homedir=commands.getoutput('cat /etc/passwd | grep %s | cut -d ":" -f 6' % (user_name)).split('\n')
+      
+          user_profile_path = str(user_homedir[0])+'/.profile'
+      elif target == "all":
+          user_profile_path = "/etc/sysconfig/language"
+      
+      replace_cmd = "sed -i '/^export INPUT_METHOD=/d' %s" % (user_profile_path)
+      os.system(replace_cmd)
+      
+      add_cmd = "echo '%s' >> %s" % (ims_cmd, user_profile_path)
+      os.system(add_cmd)
+      
+    
+    
 def noseeing_yes_no():
     msg="請問您是否要安裝無蝦米輸入法？"
     dlg = gtk.MessageDialog \
@@ -62,19 +79,19 @@ def sel_users(selected_cin):
     for user_name in USERS_LIST:
      user_name_box= user_name + "_box"
      if dlg_bts[user_name_box].get_active():
-      print "套用輸入法設定到" + user_name + "..."
-      user_homedir=commands.getoutput('cat /etc/passwd | grep %s | cut -d ":" -f 6' % (user_name)).split('\n')
-      ims_cmd = "export INPUT_METHOD=\"%s\"" % (selected_cin)
-      user_profile = open(str(user_homedir[0])+'/.profile', 'rw')
-      profile_contain = user_profile.readlines()
-      profile_len = len(profile_contain)
-      search_str = re.compile('^export INPUT_METHOD=')
-      for i in range(profile_len):
-       if search_str.match(profile_contain[i]):
-        del profile_contain[i]
-      user_profile.write()
+         apply_im_setting(user_name, selected_cin,users)
+
+      #user_profile = open(str(user_homedir[0])+'/.profile', 'w')
+      #profile_contain = user_profile.readlines()
       
-      os.system(ims_cmd)
+      #profile_len = len(profile_contain)
+      #search_str = re.compile('^export INPUT_METHOD=')
+      #for i in range(profile_len):
+      # if search_str.match(profile_contain[i]):
+      #  del profile_contain[i]
+      #user_profile.write(ims_cmd)
+      #user_profile.close()
+      #os.system(ims_cmd)
 
 
 
@@ -107,19 +124,23 @@ def user_scope (selected_cin):
 
     if currectuser:
        print "套用輸入法設定到當前使用者..."
-       ims_cmd = "su -c \"im-switch -s %s\" %s" % (selected_cin, os.environ['REAL_USER']) 
-       os.system(ims_cmd)
+       #ims_cmd = "su -c \"im-switch -s %s\" %s" % (selected_cin, os.environ['REAL_USER']) 
+       #os.system(ims_cmd)
+       user_name = os.environ['REAL_USER']
+       apply_im_setting(user_name, selected_cin,users)
+       
 
     elif alluser:
        print "套用輸入法設定到所有使用者..."
-       ims_cmd = "sudo im-switch -s %s" % (selected_cin)
-       os.system(ims_cmd)
+    #   ims_cmd = "sudo im-switch -s %s" % (selected_cin)
+    #   os.system(ims_cmd)
+       apply_im_setting(none, selected_cin,"all")
     elif seluser:
        sel_users(selected_cin)
 
 
 def main():
-    apt_cmd = "apt-get -y install "
+    zypper_cmd = "zypper install "
 
     gcin_text = "gcin \"由台灣網友開發的輸入法，有許多在地化的調校，\n是在臺灣相當受到歡迎的中文輸入法。\n有許多方便的功能，穩定而強大，內建多種輸入法，\n包括功能類似微軟新注音的詞音輸入法、並「可支援無蝦米」。\n但和 Windows 下常見的操作習慣相差不少，新手可能會很不習慣。\n\""
     scim_text = "scim \"Ubuntu 預設的中文輸入法，可以輸入多國文字，功能強大，\n操作和 Windows 上接近，內含類似新注音，相當知名的新酷音輸入法，\n但是比較龐大，目前穩定性也不及 gcin\n\""
@@ -129,15 +150,16 @@ def main():
     fin, fout = os.popen2(zenity_cmd)
     selected_cin = fout.read().strip()
 
-    os.system(apt_cmd + "im-switch")
+    #os.system(apt_cmd + "im-switch")
 
     if selected_cin == 'gcin' or selected_cin == 'scim':
         os.system(apt_cmd + selected_cin)
 
         if selected_cin == "scim":
-            os.system(apt_cmd + "scim-qtimm scim-chewing")
+            os.system(zypper_cmd + "scim-qtimm scim-chewing")
         elif selected_cin == 'gcin':
-            os.system(apt_cmd +'gcin-qt3-immodule' )
+            os.system("zypper ar http://download.opensuse.org/repositories/home:/swyear/openSUSE_11.1/ swyear")
+            os.system(zypper_cmd +'gcin-qt3-immodule' )
             # install noseeing
             # FIXME: 使用者應該可以選擇不要安裝無蝦米
             #os.system( 'scripts/noseeing-inst' )
