@@ -140,7 +140,7 @@ def user_scope (selected_cin):
 
 
 def main():
-    zypper_cmd = "zypper install -l --yes "
+    zypper_cmd = "zypper -n install "
     xhost_cmd = "xhost local:%s" % (os.environ['REAL_USER'])
     print xhost_cmd
     os.system(xhost_cmd)
