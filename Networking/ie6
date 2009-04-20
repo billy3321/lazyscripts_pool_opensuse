@@ -39,11 +39,11 @@ export TMP_DIR='temp/ie6'
 zypper -n install wine cabextract unzip
 case $PLAT_NAME in
 "i686"|"i386")
-	zypper -n in ftp5.gwdg.de/pub/opensuse/repositories/home:/MadCAD/openSUSE_11.1/i586/icoutils-0.26.0-3.1.i586.rpm
+	zypper -n install ftp5.gwdg.de/pub/opensuse/repositories/home:/MadCAD/openSUSE_11.1/i586/icoutils-0.26.0-3.1.i586.rpm
 	CONT_INSTALL='Y'
 ;;
 "x86_64")
-	zypper -n in ftp5.gwdg.de/pub/opensuse/repositories/home:/MadCAD/openSUSE_11.0/x86_64/icoutils-0.26.0-3.1.x86_64.rpm
+	zypper -n install ftp5.gwdg.de/pub/opensuse/repositories/home:/MadCAD/openSUSE_11.0/x86_64/icoutils-0.26.0-3.1.x86_64.rpm
 	CONT_INSTALL='Y'
 ;;
 *)
