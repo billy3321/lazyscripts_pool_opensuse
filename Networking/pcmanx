@@ -24,6 +24,7 @@ x86_64)
 *)
 	echo "PCMan X GTK+2 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
 ;;
+esac
 
 if [ -a "$REAL_HOME/.pcmanx/pcmanx" ]; then
     sed -i -e 's/\(WebBrowser=\)mozilla %s/\1xdg-open %s/' "$REAL_HOME/.pcmanx/pcmanx"
