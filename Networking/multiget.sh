@@ -1,6 +1,7 @@
 #!/bin/bash 
 # -*- coding: utf-8 -*-
 # Copyright (C) 2009 王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>
+# Copyright (C) 2009 張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>
 #
 # @name_enUS 'Install MultiGet'
 # @name_zhTW '安裝 MultiGet'
@@ -18,9 +19,11 @@
 case $PLAT_NAME in
 	"i686"|"i386")
 		zypper -n install http://download.opensuse.org/repositories/network:/utilities/openSUSE_10.3/i586/multiget-1.1.4-5.1.i586.rpm
+		echo "MultiGet 安裝完成。"
 	;;
 	"x86_64")
 		zypper -n install http://download.opensuse.org/repositories/network:/utilities/openSUSE_10.3/x86_64/multiget-1.1.4-5.1.x86_64.rpm
+		echo "MultiGet 安裝完成。"
 	;;
 	*)
 		echo "MultiGet 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
