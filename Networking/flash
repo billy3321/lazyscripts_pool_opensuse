@@ -9,9 +9,8 @@
 # @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @author '洪任諭(PCMan) <pcman.tw -AT- gmail.com>'
 # @license 'GPL'
-# @opensuse
+# @opensuse 
 # @platform 'i386 AMD64'
-# @child 'Multimedia/multimedia-repos'
 
 echo "正在安裝 Flash..."
 zypper -n install flash-player libflashsupport pullin-flash-player 

@@ -15,8 +15,9 @@
 # @license 'GPL'
 # @openSUSE 
 # @platform 'i386 amd64'
+echo -e "y\n" > confirm
+sudo /sbin/OCICLI http://software.opensuse.org/ymp/home:davjam79/openSUSE_11.0/firestarter.ymp < confirm
 
-sudo /sbin/OCICLI http://software.opensuse.org/ymp/home:davjam79/openSUSE_11.0/firestarter.ymp
 #
 #case $PLAT_NAME in 
 #"i686"|"i386")
