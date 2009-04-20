@@ -17,5 +17,5 @@
 # @openSUSE 
 # @platform 'i386 amd64'
 
-zypper -n install smplayer
+zypper -n in smplayer
 
