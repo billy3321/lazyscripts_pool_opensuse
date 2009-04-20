@@ -15,7 +15,7 @@
 # @platform 'i386 AMD64'
 
 case "$PLAT_NAME" in
-i686)
+i686|i386)
 	zypper -n install http://download.opensuse.org/repositories/home:/swyear/openSUSE_11.1/i586/pcmanx-gtk2-0.svn464-23.1.i586.rpm
 ;;
 x86_64)
