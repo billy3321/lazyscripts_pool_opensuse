@@ -26,7 +26,7 @@
 case "$PLAT_NAME" in
 i686)
 echo '移除系統上原本的 Real Player 套件...'
-zypeer -n rm realplay
+zypper -n rm realplay
 
 echo '下載並安裝 Real Player 11...'
 zypper -n in http://www.real.com/realcom/R?href=http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm
