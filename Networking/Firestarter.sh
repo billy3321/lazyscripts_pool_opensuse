@@ -18,9 +18,11 @@
 
 case $PLAT_NAME in 
 "i686"|"i386")
+	zypper -n install http://download.opensuse.org/repositories/security:/SELinux/openSUSE_11.1/i586/usermode-gtk-1.99-1.4.i586.rpm
 	zypper -n install http://download.opensuse.org/repositories/home:/davjam79/openSUSE_11.0/i586/firestarter-1.0.3-16.2.i586.rpm
 ;;
 x86_64)
+	zypper -n install http://download.opensuse.org/repositories/security:/SELinux/openSUSE_11.1/x86_64/usermode-gtk-1.99-1.4.x86_64.rpm
 	zypper -n install http://download.opensuse.org/repositories/home:/davjam79/openSUSE_11.0/x86_64/firestarter-1.0.3-16.2.x86_64.rpm
 ;;
 *)
