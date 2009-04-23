@@ -22,10 +22,10 @@
 echo "正在下載並安裝MadEdit..."
 
 case "$ARCH_NAME" in
-i686)
+'i686')
 zypper -n install http://nchc.dl.sourceforge.net/sourceforge/madedit/madedit-0.2.9-1.i386.rpm
 ;;
-x86_64)
+'x86_64')
 zypper -n install http://nchc.dl.sourceforge.net/sourceforge/madedit/madedit-0.2.9-1.x86_64.rpm
 ;;
 *)
