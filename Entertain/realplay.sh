@@ -3,9 +3,10 @@
 # Copyright (C) 2007 洪任諭 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
 # Copyright (C) 2008 林哲瑋 Zhe-Wei Lin (billy3321,雨蒼) <billy3321 -AT- gmail.com>
 # Copyright (C) 2009 張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>
-# Last Modified:20 Apr 2009
+# Last Modified: 24 Apr 2009
 # Released under GNU General Public License
-# Download and install realplayer for i686 and x86_64 ubuntu
+# Download and install realplayer for i386 and x86_64 openSUSE
+# and setup Mplayer realmedia support
 # Please run as root.
 # Remove older version realplayer
 #
@@ -18,43 +19,44 @@
 # @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @author '洪任諭 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>'
 # @license 'GPL'
-# @openSUSE
+# @openSUSE ''
 # @platform 'i386 amd64'
-# @child 'Common/download-install Common/debinstall.py'
 
-mkdir realplay
-pushd realplay
 
 case "$PLAT_NAME" in
-'i686'|'i386')
-echo '移除系統上原本的 Real Player 套件...'
-zypper -n rm realplay
+    'i686'|'i386')
+		echo '移除系統上原本的 Real Player 套件...'
+		zypper -n rm realplay
+		echo '下載並安裝 Real Player 11...'
+		mkdir -p temp/realplay
+        pushd temp/realplay
+		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm'
+		zypper -n in RealPlayer11GOLD.rpm
+        popd
 
-echo '下載並安裝 Real Player 11...'
-wget http://www.real.com/realcom/R?href=http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm
-zypper -n in ./RealPlayer11GOLD.rpm
-;;
-'x86_64')
-#FIXME:use
-# http://www.real.com/realcom/R?href=http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.bin
-echo '移除系統上原本的 Real Player 套件...'
-zypper -n rm realplay
+		echo '設定 Mplayer 使支援 RealMedia 格式播放...'
+		mkdir -p /usr/lib/RealPlayer10
+		cp -r /opt/real/RealPlayer/* /usr/lib/RealPlayer10/
+		echo 'Done!'
+	;;
+	"x86_64")
+		echo '移除系統上原本的 Real Player 套件...'
+		zypper -n rm realplay
+		mkdir -p temp/realplay
+		TOP_DIR=`pwd`
+		pushd temp/realplay
+		echo '下載並安裝 Real Player 11...'
+		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.bin'
+		chmod a+x RealPlayer11GOLD.bin
+		echo -e "\n/usr/lib/RealPlayer10\n\n" > real_echo
+		echo `pwd`
+		`pwd`/RealPlayer11GOLD.bin < real_echo
 
-mkdir -p temp/realplay
-TOP_DIR=`pwd`
-cd temp/realplay
-echo '下載並安裝 Real Player 11...'
-$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.bin'
-chmod a+x RealPlayer11GOLD.bin
-echo -e "\n\n\n" > real_echo
-echo `pwd`
-`pwd`/RealPlayer11GOLD.bin < real_echo
-
-cd "$TOP_DIR"
-;;
-*)
-echo "Real Player 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
-;;
+        popd
+		echo 'Done!'
+	;;
+	*)
+		echo "Real Player 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
+	;;
 esac
 
-popd
