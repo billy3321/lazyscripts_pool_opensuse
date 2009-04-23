@@ -29,7 +29,7 @@ case $PLAT_NAME in
 		echo '下載並安裝 Real Player 11...'
 		mkdir ./tmp
 		cd ./tmp
-		curl -O http://www.real.com/realcom/R?href=http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm
+		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm'
 		zypper -n in RealPlayer11GOLD.rpm
 		cd ../
 		rm -rf ./tmp
