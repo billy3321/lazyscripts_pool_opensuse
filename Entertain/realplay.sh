@@ -22,6 +22,8 @@
 # @platform 'i386 amd64'
 # @child 'Common/download-install Common/debinstall.py'
 
+mkdir realplay
+pushd realplay
 
 case "$PLAT_NAME" in
 'i686'|'i386')
@@ -29,7 +31,8 @@ echo '移除系統上原本的 Real Player 套件...'
 zypper -n rm realplay
 
 echo '下載並安裝 Real Player 11...'
-zypper -n in http://www.real.com/realcom/R?href=http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm
+wget http://www.real.com/realcom/R?href=http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm
+zypper -n in ./RealPlayer11GOLD.rpm
 ;;
 'x86_64')
 #FIXME:use
@@ -53,3 +56,5 @@ cd "$TOP_DIR"
 echo "Real Player 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
 ;;
 esac
+
+popd
