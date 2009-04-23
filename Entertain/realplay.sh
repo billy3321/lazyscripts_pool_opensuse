@@ -5,7 +5,7 @@
 # Copyright (C) 2009 張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>
 # Last Modified:20 Apr 2009
 # Released under GNU General Public License
-# Download and install realplayer for i686 and x86_64 ubuntu
+# Download and install realplayer for i386 and x86_64 openSUSE
 # Please run as root.
 # Remove older version realplayer
 #
@@ -18,13 +18,12 @@
 # @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @author '洪任諭 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>'
 # @license 'GPL'
-# @openSUSE
+# @openSUSE ''
 # @platform 'i386 amd64'
-# @child 'Common/download-install Common/debinstall.py'
 
 
-case "$PLAT_NAME" in
-	"i686"|"i386")
+case $PLAT_NAME in
+	"i386")
 		echo '移除系統上原本的 Real Player 套件...'
 		zypper -n rm realplay
 		echo '下載並安裝 Real Player 11...'
@@ -35,7 +34,7 @@ case "$PLAT_NAME" in
 		cd ../
 		rm -rf ./tmp
 	;;
-	x86_64)
+	"x86_64")
 #FIXME:use
 # http://www.real.com/realcom/R?href=http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.bin
 		echo '移除系統上原本的 Real Player 套件...'
