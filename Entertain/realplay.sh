@@ -24,7 +24,7 @@
 
 
 case $PLAT_NAME in
-	"i386")i
+	"i386")
 		echo '移除系統上原本的 Real Player 套件...'
 		zypper -n rm realplay
 		echo '下載並安裝 Real Player 11...'
