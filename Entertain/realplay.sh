@@ -24,32 +24,35 @@
 
 
 case "$PLAT_NAME" in
-i686)
-echo '移除系統上原本的 Real Player 套件...'
-zypper -n rm realplay
-
-echo '下載並安裝 Real Player 11...'
-zypper -n in http://www.real.com/realcom/R?href=http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm
-;;
-x86_64)
+	"i686"|"i386")
+		echo '移除系統上原本的 Real Player 套件...'
+		zypper -n rm realplay
+		echo '下載並安裝 Real Player 11...'
+		mkdir ./tmp
+		cd ./tmp
+		curl -O http://www.real.com/realcom/R?href=http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm
+		zypper -n in RealPlayer11GOLD.rpm
+		cd ../
+		rm -rf ./tmp
+	;;
+	x86_64)
 #FIXME:use
 # http://www.real.com/realcom/R?href=http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.bin
-echo '移除系統上原本的 Real Player 套件...'
-zypper -n rm realplay
+		echo '移除系統上原本的 Real Player 套件...'
+		zypper -n rm realplay
+		mkdir -p temp/realplay
+		TOP_DIR=`pwd`
+		cd temp/realplay
+		echo '下載並安裝 Real Player 11...'
+		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.bin'
+		chmod a+x RealPlayer11GOLD.bin
+		echo -e "\n\n\n" > real_echo
+		echo `pwd`
+		`pwd`/RealPlayer11GOLD.bin < real_echo
 
-mkdir -p temp/realplay
-TOP_DIR=`pwd`
-cd temp/realplay
-echo '下載並安裝 Real Player 11...'
-$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.bin'
-chmod a+x RealPlayer11GOLD.bin
-echo -e "\n\n\n" > real_echo
-echo `pwd`
-`pwd`/RealPlayer11GOLD.bin < real_echo
-
-cd "$TOP_DIR"
-;;
-*)
-echo "Real Player 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
-;;
+		cd "$TOP_DIR"
+	;;
+	*)
+		echo "Real Player 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
+	;;
 esac
