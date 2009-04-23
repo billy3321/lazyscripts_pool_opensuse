@@ -1,0 +1,14 @@
+#!/bin/bash
+
+function add_swyear() {
+HAS_SWYEAR=`zypper lr -d | grep "http://download.opensuse.org/repositories/home:/swyear"`
+if [ -z "$HAS_SWYEAR" ]; then
+    zypper -n ar http://download.opensuse.org/repositories/home:/swyear/${DISTRIB_ID}_${DISTRIB_VERSION} swyear
+else
+    echo 'Swyear 套件庫已經存在'
+fi
+}
+
+
+
+#END
