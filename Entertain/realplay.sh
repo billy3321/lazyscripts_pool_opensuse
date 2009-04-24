@@ -57,4 +57,3 @@ case "$PLAT_NAME" in
 		echo "Real Player 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
 	;;
 esac
-
