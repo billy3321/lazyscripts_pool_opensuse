@@ -25,7 +25,7 @@ add_swyear
 
 zypper -n install madedit
 
-# case "$ARCH_NAME" in
+# case "$PLAT_NAME" in
 #     'i386'|'i686')
 #         zypper -n install http://nchc.dl.sourceforge.net/sourceforge/madedit/madedit-0.2.9-1.i386.rpm
 #     ;;
@@ -33,7 +33,7 @@ zypper -n install madedit
 #         zypper -n install http://nchc.dl.sourceforge.net/sourceforge/madedit/madedit-0.2.9-1.x86_64.rpm
 #     ;;
 #     *)
-#         echo "抱歉，目前Lazyscripts並不支援 $ARCH_NAME 硬體架構，取消安裝。"
+#         echo "抱歉，目前Lazyscripts並不支援 $PLAT_NAME 硬體架構，取消安裝。"
 #     ;;
 # esac
 
