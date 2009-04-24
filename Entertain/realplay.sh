@@ -23,25 +23,25 @@
 # @platform 'i386 amd64'
 
 
-case $PLAT_NAME in
-	"i386")
-		echo '下載並安裝 Real Player 11...'
-		mkdir ./tmp
-		cd ./tmp
-		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm'
-		zypper -n in RealPlayer11GOLD.rpm
-		cd ../
-		rm -rf ./tmp
-
-		echo '設定 Mplayer 使支援 RealMedia 格式播放...'
-		mkdir -p /usr/lib/RealPlayer10
-		cp -r /opt/real/RealPlayer/* /usr/lib/RealPlayer10/
-		echo 'Done!'
-	;;
-	"x86_64")
+#case $PLAT_NAME in
+#	"i386")
+#		echo '下載並安裝 Real Player 11...'
+#		mkdir ./tmp
+#		cd ./tmp
+#		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm'
+#		zypper -n in RealPlayer11GOLD.rpm
+#		cd ../
+#		rm -rf ./tmp
+#
+#		echo '設定 Mplayer 使支援 RealMedia 格式播放...'
+#		mkdir -p /usr/lib/RealPlayer10
+#		cp -r /opt/real/RealPlayer/* /usr/lib/RealPlayer10/
+#		echo 'Done!'
+#	;;
+#	"x86_64")
 		mkdir -p temp/realplay
 		TOP_DIR=`pwd`
-		cd temp/realplay
+		#cd temp/realplay
 		echo '下載並安裝 Real Player 11...'
 		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.bin'
 		chmod a+x RealPlayer11GOLD.bin
@@ -51,8 +51,8 @@ case $PLAT_NAME in
 
 		cd "$TOP_DIR"
 		echo 'Done!'
-	;;
-	*)
-		echo "Real Player 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
-	;;
-esac
+#	;;
+#	*)
+#		echo "Real Player 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
+#	;;
+#esac
