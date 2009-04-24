@@ -40,8 +40,6 @@ case "$PLAT_NAME" in
 		echo 'Done!'
 	;;
 	"x86_64")
-		echo '移除系統上原本的 Real Player 套件...'
-		zypper -n rm realplay
 		mkdir -p temp/realplay
 		TOP_DIR=`pwd`
 		pushd temp/realplay
