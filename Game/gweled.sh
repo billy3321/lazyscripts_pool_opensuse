@@ -14,17 +14,22 @@
 # @license 'GPL'
 # @opensuse ''
 # @platform 'i386 amd64'
+# @child 'Common/add-zypper-sources'
+source add-zypper-sources
+add_Education
 
-echo '正在安裝下載寶石方塊...'
-case $PLAT_NAME in
-	'i386'|'i686')
-		zypper -n in http://download.opensuse.org/repositories/Education/openSUSE_11.1/i586/gweled-0.7-3.24.i586.rpm
-	;;
-	'x86_64')
-		zypper -n in http://download.opensuse.org/repositories/Education/openSUSE_11.1/x86_64/gweled-0.7-3.24.x86_64.rpm
-	;;
-	*)
-		echo "寶石方塊目前不支援 $PLAT_NAME 平台，取消安裝"
-	;;
-esac
+zypper -n in gweled
+
+#echo '正在安裝下載寶石方塊...'
+#case $PLAT_NAME in
+#	'i386'|'i686')
+#		zypper -n in http://download.opensuse.org/repositories/Education/openSUSE_11.1/i586/gweled-0.7-3.24.i586.rpm
+#	;;
+#	'x86_64')
+#		zypper -n in http://download.opensuse.org/repositories/Education/openSUSE_11.1/x86_64/gweled-0.7-3.24.x86_64.rpm
+#	;;
+#	*)
+#		echo "寶石方塊目前不支援 $PLAT_NAME 平台，取消安裝"
+#	;;
+#esac
 
