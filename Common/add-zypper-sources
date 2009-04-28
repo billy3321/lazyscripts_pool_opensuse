@@ -1,0 +1,30 @@
+#!/bin/bash
+
+function add_swyear() {
+HAS_SWYEAR=`zypper lr -d | grep "http://download.opensuse.org/repositories/home:/swyear"`
+if [ -z "$HAS_SWYEAR" ]; then
+    zypper -n ar http://download.opensuse.org/repositories/home:/swyear/${DISTRIB_ID}_${DISTRIB_VERSION} swyear
+else
+    echo 'Swyear 套件庫已經存在'
+fi
+}
+
+function add_Education() {
+HAS_EDU=`zypper lr -d | grep "http://download.opensuse.org/repositories/Education"`
+if [ -z "$HAS_EDU" ]; then
+    zypper -n ar http://download.opensuse.org/repositories/Education/${DISTRIB_ID}_${DISTRIB_VERSION} Education
+else
+    echo 'Education 套件庫已經存在'
+fi
+}
+
+function add_packman() {
+HAS_PACKMAN=`zypper lr -d | grep "http://packman.mirrors.skynet.be/pub/packman/suse"`
+if [ -z "$HAS_PACKMAN" ]; then
+    zypper -n ar http://packman.mirrors.skynet.be/pub/packman/suse/${DISTRIB_VERSION}
+else
+    echo 'Packman 套件庫已經存在'
+fi
+}
+
+#END
