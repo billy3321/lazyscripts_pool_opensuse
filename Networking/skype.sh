@@ -35,10 +35,7 @@ case $PLAT_NAME in
 	;;
 	'x86_64')
 		zypper -n in libqt4 libqt4-x11 libqt4-dbus-1 libsigc++2
-		zypper -n in libqt4-32bit
-		zypper -n in libqt4-x11-32bit
-		zypper -n in libqt4-dbus-1-32bit
-		zypper -n in libsigc++2-32bit
+		zypper -n in libqt4-32bit libqt4-x11-32bit libqt4-dbus-1-32bit libsigc++2-32bit
 		pushd ./temp/skype
 		$WGET 'http://www.skype.com/go/getskype-linux-suse'
 		zypper -n in *.rpm
