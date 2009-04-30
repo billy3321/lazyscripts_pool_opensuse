@@ -17,5 +17,5 @@
 echo '安裝 recordMyDesktop...'
 zypper -n in recordmydesktop
 echo '安裝 gtk-recordMyDesktop - 圖形介面...'
-zypper -n in gtp-recordmydesktop
+zypper -n in gtk-recordmydesktop
 
