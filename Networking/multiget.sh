@@ -18,11 +18,15 @@
 
 case "$PLAT_NAME" in
 	"i686"|"i386")
+		echo
 		echo '[1;33;41m 安裝 MultiGet... [m'
+		echo
 		zypper -n install http://download.opensuse.org/repositories/network:/utilities/openSUSE_10.3/i586/multiget-1.1.4-5.1.i586.rpm
 	;;
 	"x86_64")
+		echo
 		echo '[1;33;41m 安裝 MultiGet... [m'
+		echo
 		zypper -n install http://download.opensuse.org/repositories/network:/utilities/openSUSE_10.3/x86_64/multiget-1.1.4-5.1.x86_64.rpm
 	;;
 	*)

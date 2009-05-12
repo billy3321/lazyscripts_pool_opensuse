@@ -36,7 +36,7 @@ case $PLAT_NAME in
 		zypper --non-interactive --no-refresh in RealPlayer11GOLD.rpm
         popd
 
-		echo '[1;33;41m 設定 Mplayer 使支援 RealMedia 格式播放... [m'
+		echo '設定 Mplayer 使支援 RealMedia 格式播放...'
 		mkdir -p /usr/lib/RealPlayer10
 		cp -r /opt/real/RealPlayer/* /usr/lib/RealPlayer10/
 	;;
