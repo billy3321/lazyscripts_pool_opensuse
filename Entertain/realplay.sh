@@ -25,9 +25,11 @@
 
 case $PLAT_NAME in
     'i686'|'i386')
-		echo '[1;33;41m 移除系統上原本的 Real Player 套件... [m'
+		echo '移除系統上原本的 Real Player 套件...'
 		zypper -n rm realplay
+		echo
 		echo '[1;33;41m 下載並安裝 Real Player 11... [m'
+		echo
 		mkdir -p temp/realplay
         pushd temp/realplay
 		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm'
@@ -42,7 +44,9 @@ case $PLAT_NAME in
 		mkdir -p temp/realplay
 		TOP_DIR=`pwd`
 		pushd temp/realplay
+		echo
 		echo '[1;33;41m 下載並安裝 Real Player 11... [m'
+		echo
 		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.bin'
 		chmod a+x RealPlayer11GOLD.bin
 		echo -e "\n/usr/lib/RealPlayer10\n\n" > real_echo
