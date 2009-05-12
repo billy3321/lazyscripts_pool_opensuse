@@ -15,7 +15,9 @@
 # @opensuse ''
 # @platform 'i386 amd64'
 
-echo "安裝 Code::Block..."
+echo
+echo '[1;33;41m 安裝 Code::Block... [m'
+echo
 
 case $PLAT_NAME in
 	'i386'|'i686')
