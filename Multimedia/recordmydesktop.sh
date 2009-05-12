@@ -14,8 +14,11 @@
 # @opensuse ''
 # @platform 'i386 amd64'
 
-echo '安裝 recordMyDesktop...'
-zypper -n in recordmydesktop
-echo '安裝 gtk-recordMyDesktop - 圖形介面...'
-zypper -n in gtk-recordmydesktop
+echo "安裝 recordMyDesktop..."
+
+zypper --non-interactive --no-refresh in recordmydesktop
+
+echo "安裝 gtk-recordMyDesktop - 圖形介面..."
+
+zypper --non-interactive --no-refresh  in gtk-recordmydesktop
 

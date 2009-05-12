@@ -22,8 +22,10 @@ download_url_prefix='http://nchc.dl.sourceforge.net/sourceforge/stardict/'
 temp_dir='temp/stardict/'
 dic_dir='/usr/share/stardict/dic/'
 
+echo "安裝 StarDict..."
+
 mkdir -p "$temp_dir"
-zypper -n install stardict
+zypper --non-interactive --no-refresh install stardict
 
 dict_list=" \
     stardict-cdict-big5-2.4.2.tar.bz2 \
@@ -33,6 +35,8 @@ dict_list=" \
     stardict-cedict-big5-2.4.2.tar.bz2 \
     stardict-langdao-ec-big5-2.4.2.tar.bz2 \
     stardict-langdao-ce-big5-2.4.2.tar.bz2"
+
+echo "安裝 字典檔..."
 
 for d in $dict_list
 do

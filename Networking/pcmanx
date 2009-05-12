@@ -1,6 +1,10 @@
 #!/bin/bash
 # -*- coding: utf-8 -*-
-#
+# Copyright (C) 2009 張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>
+# Last Modified: 24 Apr 2009
+# Released under GNU General Public License
+# Please run as root.
+
 # @name_enUS '' 
 # @name_zhTW '安裝 PCMan X GTK+2 BBS 連線軟體'
 # @desc_enUS ''
@@ -10,25 +14,33 @@
 # @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @author '洪任諭(PCMan) <pcman.tw -AT- gmail.com>'
 # @license 'GPL'
-# @openSUSE
+# @opensuse ''
 # @platform 'i386 AMD64'
+# @child 'Common/add-zypper-sources'
 
-case "$PLAT_NAME" in
-i686|i386)
-	zypper -n install http://download.opensuse.org/repositories/home:/swyear/openSUSE_11.1/i586/pcmanx-gtk2-0.svn464-23.1.i586.rpm
-	CONT_INSTALL="Y"
-;;
-x86_64)
-	zypper -n install http://download.opensuse.org/repositories/home:/swyear/openSUSE_11.1/x86_64/pcmanx-gtk2-0.svn464-23.1.x86_64.rpm
-	CONT_INSTALL="Y"
-;;
-*)
-	CONT_INSTALL="N"
-;;
-esac
+source add-zypper-sources
+add_swyear
 
-case $CONT_INSTALL in
-"Y")
+echo "安裝 PCMan X  GTK+2..."
+
+zypper -n in pcmanx-gtk2
+
+#case "$PLAT_NAME" in
+#i686|i386)
+#	zypper -n install http://download.opensuse.org/repositories/home:/swyear/openSUSE_11.1/i586/pcmanx-gtk2-0.svn464-23.1.i586.rpm
+#	CONT_INSTALL="Y"
+#;;
+#x86_64)
+#	zypper -n install http://download.opensuse.org/repositories/home:/swyear/openSUSE_11.1/x86_64/pcmanx-gtk2-0.svn464-23.1.x86_64.rpm
+#	CONT_INSTALL="Y"
+#;;
+#*)
+#	CONT_INSTALL="N"
+#;;
+#esac
+
+#case $CONT_INSTALL in
+#"Y")
 	if [ -a "$REAL_HOME/.pcmanx/pcmanx" ]; then
     	sed -i -e 's/\(WebBrowser=\)mozilla %s/\1xdg-open %s/' "$REAL_HOME/.pcmanx/pcmanx"
    		sed -i -e 's/\(MailClient=\)mozilla %s/\1xdg-email %s/' "$REAL_HOME/.pcmanx/pcmanx"
@@ -36,8 +48,8 @@ case $CONT_INSTALL in
     	sudo -u "$REAL_USER" mkdir -p "$REAL_HOME/.pcmanx"
     	sudo -u "$REAL_USER" cp scripts/files/pcmanx "$REAL_HOME/.pcmanx"
 	fi
-;;
-*)
-	echo "PCMan X GTK+2 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
-;;
-esac
+#;;
+#*)
+#	echo "PCMan X GTK+2 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
+#;;
+#esac

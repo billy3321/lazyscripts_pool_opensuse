@@ -20,35 +20,46 @@
 # @platform 'i386 AMD64'
 # @child 'Common/cpu-type.py'
 
+CPU=`./cpu-type.py`
+
 echo "自動偵測這台電腦上的 CPU 架構：$CPU"
 if [ -n "$CPU" ]; then
-echo "取得最新釋出版本"
-rm -r swiftfox-tmp
-mkdir swiftfox-tmp
-cd swiftfox-tmp
-echo "擷取釋出網頁"
-wget http://getswiftfox.com/releases.htm
-if [ $CPU == prescott ]; then
-    cat releases.htm | grep releases | grep tar.bz2 | grep -m 1 prescott | cut -d \" -f 2 > swiftfox-rel-arch-file
-	else
-	cat releases.htm | grep rel-$CPU > swiftfox-rel-arch
-	echo "擷取該 CPU 架構的網頁"
-	wget -B http://getswiftfox.com -F -i swiftfox-rel-arch
-	cat rel-$CPU.htm | grep releases | grep -m 1 tar.bz2 | cut -d \" -f 2 > swiftfox-rel-arch-file
-	fi
-	echo "下載 swiftfox 的壓縮檔"
-	wget -B http://getswiftfox.com -i swiftfox-rel-arch-file
-	echo "安裝 swiftfox"
-	tar -jxvf swiftfox-*.tar.bz2
-	rm -r $HOME/swiftfox.old
-	mv $HOME/swiftfox $HOME/swiftfox.old
-	mv swiftfox $HOME
-	echo "下載與處理繁體中文介面"
-	SFVERSION=`cut -d / -f 3 swiftfox-rel-arch-file`
-	wget http://releases.mozilla.org/pub/mozilla.org/firefox/releases/$SFVERSION/linux-i686/xpi/zh-TW.xpi
-	#unzip -o zh-TW.xpi -d $HOME/swiftfox/
-	#mv $HOME/swiftfox/chrome.manifest #$HOME/swiftfox/chrome/zh-TW.manifest
-	#上面這3個步驟不確定是正確的，可能造成無法開啟 swiftfox
+	mkdir -p ./temp/swiftfox
+	pushd ./temp/swiftfox
+	case $CPU in
+		'prescott')
+			$WGET 'http://getswiftfox.com/builds/installer/prescott/install-swiftfox.sh'
+			chmod a+x install-swiftfox.sh
+			./install-swiftfox.sh
+			popd
+			rm -rf ./temp/
+		;;
+		'pentium-m'|'pentium3'|'pentium4'|'athlon-64-32bit')
+			$WGET 'http://getswiftfox.com/builds/installer/i686/install-swiftfox.sh'
+			chmod a+x install-swiftfox.sh
+			./install-swiftfox.sh
+			popd
+			rm -rf ./temp/
+		;;
+		#FIXME: I am not sure AMD64 CPU's name of type
+		'athlon-xp')
+			$WGET 'http://getswiftfox.com/builds/installer/athlon64/install-swiftfox.sh'
+			chmod a+x install-swiftfox.sh
+			./install-swiftfox.sh
+			popd
+			rm -rf ./temp/
+		;;
+		*)
+			echo '未知的 CPU，無法安裝 Swiftfox'
+		;;
+	esac
+
+		echo "下載與處理繁體中文介面"
+		SFVERSION=`cut -d / -f 3 swiftfox-rel-arch-file`
+		wget http://releases.mozilla.org/pub/mozilla.org/firefox/releases/$SFVERSION/linux-i686/xpi/zh-TW.xpi
+		#unzip -o zh-TW.xpi -d $HOME/swiftfox/
+		#mv $HOME/swiftfox/chrome.manifest #$HOME/swiftfox/chrome/zh-TW.manifest
+		#上面這3個步驟不確定是正確的，可能造成無法開啟 swiftfox
 	#改成較保守的方法：第一次啟動 swiftfox 安裝繁體中文介面
 	sed 's/"general.useragent.locale", "en-US"/"general.useragent.locale", "zh-TW"/' \
 	$HOME/swiftfox/defaults/pref/firefox-l10n.js > $HOME/swiftfox/defaults/pref/firefox-l10n.js.tmp

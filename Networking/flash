@@ -12,5 +12,6 @@
 # @opensuse 
 # @platform 'i386 AMD64'
 
-echo "正在安裝 Flash..."
-zypper -n install flash-player libflashsupport pullin-flash-player 
+echo "正在安裝 Flash 外掛..."
+
+zypper --non-interactive --no-refresh in flash-player libflashsupport pullin-flash-player 

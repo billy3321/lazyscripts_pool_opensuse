@@ -12,4 +12,6 @@
 # @openSUSE 
 # @platform 'i386 AMD64'
 
-zypper -n install deluge
+echo "安裝 Deluge..."
+
+zypper --non-interactive --no-refresh install deluge

@@ -18,5 +18,7 @@
 # @openSUSE
 # @platform 'i386 amd64'
 
-zypper -n install filezilla
+echo "安裝 Filezilla..."
+
+zypper --non-interactive --no-refresh install filezilla
 

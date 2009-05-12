@@ -14,5 +14,7 @@
 # @opensuse
 # @platform 'i386 amd64'
 
-zypper -n install k3b
+echo "安裝 k3b..."
+
+zypper --non-interactive --no-refresh install k3b
 

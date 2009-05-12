@@ -16,5 +16,7 @@
 # @openSUSE
 # @platform 'i386 amd64'
 
-zypper -n install liferea
+echo "安裝 Liferea..."
+
+zypper --non-interactive --no-refresh install liferea
 

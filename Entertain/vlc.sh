@@ -16,4 +16,6 @@
 # @openSUSE ''
 # @platform 'i386 amd64'
 
-zypper -n in vlc
+echo "安裝 VLC Media Player..."
+
+zypper --non-interactive --no-refresh in vlc

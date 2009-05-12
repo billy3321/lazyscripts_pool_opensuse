@@ -1,6 +1,6 @@
 #!/bin/bash 
 # -*- coding: utf-8 -*-
-# Copyright (C) 2009 王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>
+# Copyright (C) 2009 張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>
 #
 # @name_enUS 'Install NetBeans'
 # @name_zhTW '安裝 NetBeans'
@@ -9,15 +9,13 @@
 # @warn_enUS ''
 # @warn_zhTW ''
 # @category 'Development'
-# @maintaner '王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>'
-# @author '王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>'
+# @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
+# @author '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @license 'GPL'
-# @debian
-# @ubuntu 
+# @opensuse ''
 # @platform 'i386 amd64'
 
-echo "安裝 Netbeans"
+echo "安裝 NetBeans..."
 
-apt-get -y --force-yes  install netbeans
+zypper --non-interactive --no-refresh in netbeans
 
-#END

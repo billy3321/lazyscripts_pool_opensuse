@@ -23,6 +23,8 @@
 source add-zypper-sources
 add_swyear
 
+echo "安裝 MadEdit..."
+
 zypper -n install madedit
 
 # case "$PLAT_NAME" in

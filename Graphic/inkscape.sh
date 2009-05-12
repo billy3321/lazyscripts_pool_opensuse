@@ -15,6 +15,8 @@
 # @opensuse
 # @platform 'i386 amd64'
 
-zypper -n install inkscape
+echo "安裝 Inkscape..."
+
+zypper --non-interactive --no-refresh install inkscape
 
 #END

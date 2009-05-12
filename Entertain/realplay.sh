@@ -23,7 +23,7 @@
 # @platform 'i386 amd64'
 
 
-case "$PLAT_NAME" in
+case $PLAT_NAME in
     'i686'|'i386')
 		echo '移除系統上原本的 Real Player 套件...'
 		zypper -n rm realplay
@@ -31,7 +31,7 @@ case "$PLAT_NAME" in
 		mkdir -p temp/realplay
         pushd temp/realplay
 		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm'
-		zypper -n in RealPlayer11GOLD.rpm
+		zypper --non-interactive --no-refresh in RealPlayer11GOLD.rpm
         popd
 
 		echo '設定 Mplayer 使支援 RealMedia 格式播放...'
@@ -39,7 +39,7 @@ case "$PLAT_NAME" in
 		cp -r /opt/real/RealPlayer/* /usr/lib/RealPlayer10/
 		echo 'Done!'
 	;;
-	"x86_64")
+	'x86_64')
 		mkdir -p temp/realplay
 		TOP_DIR=`pwd`
 		pushd temp/realplay

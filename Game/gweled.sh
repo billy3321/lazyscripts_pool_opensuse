@@ -15,9 +15,11 @@
 # @opensuse ''
 # @platform 'i386 amd64'
 # @child 'Common/add-zypper-sources'
+
 source add-zypper-sources
 add_Education
 
+echo "安裝 寶石方塊..."
 zypper -n in gweled
 
 #echo '正在安裝下載寶石方塊...'

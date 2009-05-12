@@ -16,8 +16,9 @@
 # @opensuse
 # @platform 'i386 amd64'
 
+echo "安裝 Mplayer..."
 
-zypper -n install mplayer
+zypper --non-interactive --no-refresh install mplayer
 mplayer_cfg_file="/etc/mplayer/mplayer.conf"
 
 # FIXME: This is not very good...

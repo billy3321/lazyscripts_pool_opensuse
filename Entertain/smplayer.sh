@@ -17,5 +17,6 @@
 # @openSUSE 
 # @platform 'i386 amd64'
 
-zypper -n in smplayer
+echo "安裝 SMplayer..."
 
+zypper --non-interactive --no-refresh  in smplayer

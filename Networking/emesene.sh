@@ -14,9 +14,11 @@
 # @opensuse
 # @platform 'i386 AMD64'
 
-zypper -n install emesene
+echo "安裝 emesene..."
 
-wget http://emesene.org/trac/raw-attachment/wiki/Plugins/LastSaid.py
+zypper --non-interactive --no-refresh install emesene
+
+$wget 'http://emesene.org/trac/raw-attachment/wiki/Plugins/LastSaid.py'
 
 mv LastSaid.py ${REAL_HOME}/.config/emesene1.0/
 
