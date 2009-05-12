@@ -25,35 +25,34 @@
 
 case $PLAT_NAME in
     'i686'|'i386')
-		echo '移除系統上原本的 Real Player 套件...'
+		echo '[1;33;41m 移除系統上原本的 Real Player 套件... [m'
 		zypper -n rm realplay
-		echo '下載並安裝 Real Player 11...'
+		echo '[1;33;41m 下載並安裝 Real Player 11... [m'
 		mkdir -p temp/realplay
         pushd temp/realplay
 		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.rpm'
 		zypper --non-interactive --no-refresh in RealPlayer11GOLD.rpm
         popd
 
-		echo '設定 Mplayer 使支援 RealMedia 格式播放...'
+		echo '[1;33;41m 設定 Mplayer 使支援 RealMedia 格式播放... [m'
 		mkdir -p /usr/lib/RealPlayer10
 		cp -r /opt/real/RealPlayer/* /usr/lib/RealPlayer10/
-		echo 'Done!'
 	;;
 	'x86_64')
 		mkdir -p temp/realplay
 		TOP_DIR=`pwd`
 		pushd temp/realplay
-		echo '下載並安裝 Real Player 11...'
+		echo '[1;33;41m 下載並安裝 Real Player 11... [m'
 		$WGET 'http://forms.real.com/real/player/download.html?f=unix/RealPlayer11GOLD.bin'
 		chmod a+x RealPlayer11GOLD.bin
 		echo -e "\n/usr/lib/RealPlayer10\n\n" > real_echo
 		echo `pwd`
 		`pwd`/RealPlayer11GOLD.bin < real_echo
-
         popd
-		echo 'Done!'
 	;;
 	*)
-		echo "Real Player 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
+		echo
+		echo '[31mReal Player 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。[m'
+		echo
 	;;
 esac

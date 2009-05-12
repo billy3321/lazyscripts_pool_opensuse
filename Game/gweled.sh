@@ -19,7 +19,10 @@
 source add-zypper-sources
 add_Education
 
-echo "安裝 寶石方塊..."
+echo
+echo '[1;33;41m 安裝 寶石方塊... [m'
+echo
+
 zypper -n in gweled
 
 #echo '正在安裝下載寶石方塊...'

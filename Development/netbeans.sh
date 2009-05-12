@@ -15,7 +15,9 @@
 # @opensuse ''
 # @platform 'i386 amd64'
 
-echo "安裝 NetBeans..."
+echo
+echo '[1;33;41m 安裝 NetBeans... [m'
+echo
 
 zypper --non-interactive --no-refresh in netbeans
 

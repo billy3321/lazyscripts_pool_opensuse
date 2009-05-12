@@ -23,7 +23,9 @@
 source add-zypper-sources
 add_standard
 
-echo "下載並安裝 Skype 網路電話..."
+echo
+echo '[1;33;41m 下載並安裝 Skype 網路電話... [m'
+echo
 
 mkdir -p ./temp/skype
 case $PLAT_NAME in 
@@ -44,6 +46,8 @@ case $PLAT_NAME in
 		rm -rf ./temp
 	;;
 	*)
-		echo "Skype 目前不支援 $PLAT_NAME 硬體架構，取消安裝。"
+		echo
+		echo '[31mSkype 目前不支援 $PLAT_NAME 硬體架構，取消安裝。[m'
+		echo
 	;;
 esac

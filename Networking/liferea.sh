@@ -16,7 +16,9 @@
 # @openSUSE
 # @platform 'i386 amd64'
 
-echo "安裝 Liferea..."
+echo 
+echo '[1;33;41m 安裝 Liferea... [m'
+echo
 
 zypper --non-interactive --no-refresh install liferea
 

@@ -23,7 +23,9 @@
 source add-zypper-sources
 add_swyear
 
-echo "安裝 MadEdit..."
+echo
+echo '[1;33;41m 安裝 MadEdit... [m'
+echo 
 
 zypper -n install madedit
 

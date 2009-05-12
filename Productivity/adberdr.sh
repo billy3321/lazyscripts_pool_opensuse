@@ -19,7 +19,9 @@ download_url='http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/9.1/enu/Adbe
 filename='AdbeRdr9.1.0-1_i486linux_enu.bin'
 temp_dir='./temp/adberdr'
 
-echo "安裝 Adobe Reader..."
+echo
+echo '[1;33;41m 安裝 Adobe Reader... [m'
+echo
 
 mkdir -p $temp_dir
 pushd $temp_dir
