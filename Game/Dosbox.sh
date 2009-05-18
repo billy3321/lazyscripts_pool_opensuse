@@ -17,7 +17,7 @@
 # @platform 'i386 amd64'
 
 echo 
-echo '[1;33;41 安裝 Dosbox... [m'
+echo '[1;33;41m 安裝 Dosbox... [m'
 echo
 
 zypper --non-interactive --no-refresh in dosbox

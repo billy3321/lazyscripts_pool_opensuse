@@ -32,8 +32,9 @@ case "$PLAT_NAME" in
 		break
 	;;
 	*)
+		echo
 		echo '[31m VirtualBox 目前不支援 $PLAT_NAME 硬體架構，取消安裝。[m'
-		break
+		echo
 	;;
 esac
 
