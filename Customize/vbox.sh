@@ -23,13 +23,11 @@ echo
 zypper -n rm virtualbox
 
 case "$PLAT_NAME" in
-	'i386'|'i586')
+	'i386'|'i686')
 		zypper -n in http://download.virtualbox.org/virtualbox/2.2.2/VirtualBox-2.2.2_46594_openSUSE111-1.i586.rpm
-		break
 	;;
 	'x86_64')
 		zypper -n in http://download.virtualbox.org/virtualbox/2.2.2/VirtualBox-2.2.2_46594_openSUSE111-1.x86_64.rpm
-		break
 	;;
 	*)
 		echo
