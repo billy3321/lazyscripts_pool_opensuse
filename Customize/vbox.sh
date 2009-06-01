@@ -24,10 +24,12 @@ zypper -n rm virtualbox
 
 case "$PLAT_NAME" in
 	'i386'|'i686')
-		zypper -n in http://download.virtualbox.org/virtualbox/2.2.2/VirtualBox-2.2.2_46594_openSUSE111-1.i586.rpm
+		echo '正在下載 VirtualBox...'
+		zypper -n in http://download.virtualbox.org/virtualbox/2.2.4/VirtualBox-2.2.4_47978_openSUSE111-1.i586.rpm
 	;;
 	'x86_64')
-		zypper -n in http://download.virtualbox.org/virtualbox/2.2.2/VirtualBox-2.2.2_46594_openSUSE111-1.x86_64.rpm
+		echo '正在下載 VirtualBox...'
+		zypper -n in http://download.virtualbox.org/virtualbox/2.2.4/VirtualBox-2.2.4_47978_openSUSE111-1.x86_64.rpm
 	;;
 	*)
 		echo
