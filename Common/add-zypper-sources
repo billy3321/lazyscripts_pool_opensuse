@@ -36,4 +36,13 @@ else
 fi
 }
 
+function add_gnome_factory() {
+HAS_EDU=`zypper lr -d | grep "http://download.opensuse.org/repositories/GNOME:/Factory/openSUSE_${DISTRIB_VERSION}"`
+if [ -z "$HAS_EDU" ]; then
+    zypper -n ar "http://download.opensuse.org/repositories/GNOME:/Factory/openSUSE_${DISTRIB_VERSION}" GNOME_Factory
+else
+    echo 'GNOME_Factory 套件庫已經存在'
+fi
+}
+
 #END
