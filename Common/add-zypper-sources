@@ -36,13 +36,4 @@ else
 fi
 }
 
-function add_mono_community() {
-HAS_MC=`zypper lr -d | grep "http://download.opensuse.org/repositories/Mono:/Community/openSUSE_${DISTRIB_VERSION}+Mono"`
-if [ -z "$HAS_MC" ]; then
-    zypper -n ar "http://download.opensuse.org/repositories/Mono:/Community/openSUSE_${DISTRIB_VERSION}+Mono" Mono:Community
-else
-    echo 'Mono:Community 套件庫已經存在'
-fi
-}
-
 #END
