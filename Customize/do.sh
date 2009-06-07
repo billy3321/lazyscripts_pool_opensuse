@@ -15,10 +15,6 @@
 # @license 'GPL'
 # @opensuse ''
 # @platform 'i386 amd64'
-# @child 'Common/add-zypper-sources'
-
-source add-zypper-sources
-add_mono_community
 
 echo
 echo '[1;33;41m 安裝 GNOME-Do... [m'
