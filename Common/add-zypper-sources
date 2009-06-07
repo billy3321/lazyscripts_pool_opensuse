@@ -28,20 +28,20 @@ fi
 }
 
 function add_standard() {
-HAS_EDU=`zypper lr -d | grep "http://download.opensuse.org/repositories/${DISTRIB_ID}:/${DISTRIB_VERSION}/standard"`
-if [ -z "$HAS_EDU" ]; then
+HAS_STD=`zypper lr -d | grep "http://download.opensuse.org/repositories/${DISTRIB_ID}:/${DISTRIB_VERSION}/standard"`
+if [ -z "$HAS_STD" ]; then
     zypper -n ar http://download.opensuse.org/repositories/${DISTRIB_ID}:/${DISTRIB_VERSION}/standard standard
 else
     echo 'Standard 套件庫已經存在'
 fi
 }
 
-function add_gnome_factory() {
-HAS_EDU=`zypper lr -d | grep "http://download.opensuse.org/repositories/GNOME:/Factory/openSUSE_${DISTRIB_VERSION}"`
-if [ -z "$HAS_EDU" ]; then
-    zypper -n ar "http://download.opensuse.org/repositories/GNOME:/Factory/openSUSE_${DISTRIB_VERSION}" GNOME_Factory
+function add_mono_community() {
+HAS_MC=`zypper lr -d | grep "http://download.opensuse.org/repositories/Mono:/Community/openSUSE_${DISTRIB_VERSION}+Mono"`
+if [ -z "$HAS_MC" ]; then
+    zypper -n ar "http://download.opensuse.org/repositories/Mono:/Community/openSUSE_${DISTRIB_VERSION}+Mono" Mono:Community
 else
-    echo 'GNOME_Factory 套件庫已經存在'
+    echo 'Mono:Community 套件庫已經存在'
 fi
 }
 
