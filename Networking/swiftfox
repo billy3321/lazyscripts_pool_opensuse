@@ -23,6 +23,8 @@
 CPU=`./cpu-type.py`
 
 echo "自動偵測這台電腦上的 CPU 架構：$CPU"
+rm -rf /usr/share/applications/Swiftfox.desktop*
+
 if [ -n "$CPU" ]; then
 	mkdir -p ./temp/swiftfox
 	pushd ./temp/swiftfox
@@ -55,8 +57,8 @@ if [ -n "$CPU" ]; then
 	esac
 
 		echo "下載與處理繁體中文介面"
-		SFVERSION=`cut -d / -f 3 swiftfox-rel-arch-file`
-		wget http://releases.mozilla.org/pub/mozilla.org/firefox/releases/$SFVERSION/linux-i686/xpi/zh-TW.xpi
+		SFVERSION=`cat install-swiftfox.sh | head -n 10 | tail -n 1 | cut -b 50-54`
+		$WGET 'http://releases.mozilla.org/pub/mozilla.org/firefox/releases/$SFVERSION/linux-i686/xpi/zh-TW.xpi'
 		#unzip -o zh-TW.xpi -d $HOME/swiftfox/
 		#mv $HOME/swiftfox/chrome.manifest #$HOME/swiftfox/chrome/zh-TW.manifest
 		#上面這3個步驟不確定是正確的，可能造成無法開啟 swiftfox
@@ -75,7 +77,7 @@ if [ -n "$CPU" ]; then
 	#直接將 swiftfox/plugins 連結到 suse 瀏覽器 plugin 的預設安裝位置 
 	echo "處理選單啟動圖示"
 	echo "[Desktop Entry]" > swiftfox.desktop
-i	echo "Encoding=UTF-8" >> swiftfox.desktop
+	echo "Encoding=UTF-8" >> swiftfox.desktop
 	echo "Name=Swiftfox" >> swiftfox.desktop
 	echo "Name[zh_TW]=Swiftfox 網頁瀏覽器" >> swiftfox.desktop
 	echo "GenericName=Web browser" >> swiftfox.desktop
@@ -87,13 +89,8 @@ i	echo "Encoding=UTF-8" >> swiftfox.desktop
 	echo "Terminal=false" >> swiftfox.desktop
 	echo "Categories=Application;WebBrowser" >> swiftfox.desktop
 	echo "Icon=$HOME/swiftfox/icons/mozicon128.png" >> swiftfox.desktop
-	test ! -e $HOME/.kde/share/applications && mkdir -p $HOME/.kde/share/applications
-	cp swiftfox.desktop $HOME/.kde/share/applications
-	test ! -e $HOME/.gnome2/vfolders/applications && mkdir -p $HOME/.gnome2/vfolders/applications
-	cp swiftfox.desktop $HOME/.gnome2/vfolders/applications
-	test ! -e $HOME/.local/share/applications && mkdir -p $HOME/.local/share/applications
-	cp swiftfox.desktop $HOME/.local/share/applications
-	echo "第一次啟動 swiftfox 以安裝中文介面"
+	cp swiftfox.desktop /usr/share/applications/Swiftfox.desktop
+	echo "第一次啟動 Swiftfox 以安裝中文介面"
 	swiftfox zh-TW.xpi
 	echo "Swiftfox $SFVERSION 已安裝完成！"
 	else
