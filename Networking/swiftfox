@@ -60,7 +60,7 @@ if [ -n "$CPU" ]; then
 	esac
 
 		echo "下載與處理繁體中文介面"
-		$WGET 'http://releases.mozilla.org/pub/mozilla.org/firefox/releases/$SFVERSION/linux-i686/xpi/zh-TW.xpi'
+		$WGET http://releases.mozilla.org/pub/mozilla.org/firefox/releases/$SFVERSION/linux-i686/xpi/zh-TW.xpi
 		#unzip -o zh-TW.xpi -d $HOME/swiftfox/
 		#mv $HOME/swiftfox/chrome.manifest #$HOME/swiftfox/chrome/zh-TW.manifest
 		#上面這3個步驟不確定是正確的，可能造成無法開啟 swiftfox
