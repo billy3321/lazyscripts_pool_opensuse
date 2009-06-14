@@ -31,6 +31,7 @@ if [ -n "$CPU" ]; then
 	case $CPU in
 		'prescott')
 			$WGET 'http://getswiftfox.com/builds/installer/prescott/install-swiftfox.sh'
+			SFVERSION=`cat install-swiftfox.sh | head -n 10 | tail -n 1 | cut -b 50-54`
 			chmod a+x install-swiftfox.sh
 			./install-swiftfox.sh
 			popd
@@ -38,6 +39,7 @@ if [ -n "$CPU" ]; then
 		;;
 		'pentium-m'|'pentium3'|'pentium4'|'athlon-64-32bit')
 			$WGET 'http://getswiftfox.com/builds/installer/i686/install-swiftfox.sh'
+			SFVERSION=`cat install-swiftfox.sh | head -n 10 | tail -n 1 | cut -b 50-54`
 			chmod a+x install-swiftfox.sh
 			./install-swiftfox.sh
 			popd
@@ -46,6 +48,7 @@ if [ -n "$CPU" ]; then
 		#FIXME: I am not sure AMD64 CPU's name of type
 		'athlon-xp')
 			$WGET 'http://getswiftfox.com/builds/installer/athlon64/install-swiftfox.sh'
+			SFVERSION=`cat install-swiftfox.sh | head -n 10 | tail -n 1 | cut -b 50-54`
 			chmod a+x install-swiftfox.sh
 			./install-swiftfox.sh
 			popd
@@ -57,7 +60,6 @@ if [ -n "$CPU" ]; then
 	esac
 
 		echo "下載與處理繁體中文介面"
-		SFVERSION=`cat install-swiftfox.sh | head -n 10 | tail -n 1 | cut -b 50-54`
 		$WGET 'http://releases.mozilla.org/pub/mozilla.org/firefox/releases/$SFVERSION/linux-i686/xpi/zh-TW.xpi'
 		#unzip -o zh-TW.xpi -d $HOME/swiftfox/
 		#mv $HOME/swiftfox/chrome.manifest #$HOME/swiftfox/chrome/zh-TW.manifest
