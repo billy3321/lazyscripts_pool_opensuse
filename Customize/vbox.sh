@@ -54,23 +54,23 @@ VBoxMenu
 		zypper -n in http://download.virtualbox.org/virtualbox/3.0.2/VirtualBox-3.0.2_49928_openSUSE111-1.x86_64.rpm
 		echo -e "\n 處理選單啟動圖示..."
 		cat <<VBoxMenu > ./VirtualBox.desktop
-		[Desktop Entry]
-		Encoding=UTF-8
-		Version=1.0
-		Name=Sun VirtualBox
-		GenericName=Virtual Machine
-		Type=Application
-		Exec=VirtualBox
-		TryExec=gnomesu VirtualBox
-		DocPath=file:///usr/share/doc/packages/VirtualBox/UserManual.pdf
-		Icon=VBox
-		Categories=Emulator;System;X-MandrivaLinux-System;
-		Comment=Run several virtual systems on a single host computer
-		Comment[de]=Windows und andere Betriebssysteme unter Linux ausführen
-		Comment[it]=Esegui più macchine virtuali su un singolo computer
-		Comment[pl]=Uruchamianie wielu systemów wirtualnych na jednym komputerze gospoda
-		Comment[sv]=Kör flera virtuella system på en enda värddator
-		Comment[ko]=가상 머신
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Sun VirtualBox
+GenericName=Virtual Machine
+Type=Application
+Exec=VirtualBox
+TryExec=gnomesu VirtualBox
+DocPath=file:///usr/share/doc/packages/VirtualBox/UserManual.pdf
+Icon=VBox
+Categories=Emulator;System;X-MandrivaLinux-System;
+Comment=Run several virtual systems on a single host computer
+Comment[de]=Windows und andere Betriebssysteme unter Linux ausführen
+Comment[it]=Esegui più macchine virtuali su un singolo computer
+Comment[pl]=Uruchamianie wielu systemów wirtualnych na jednym komputerze gospoda
+Comment[sv]=Kör flera virtuella system på en enda värddator
+Comment[ko]=가상 머신
 
 VBoxMenu
 		mv VirtualBox.desktop /usr/share/applications/VirtualBox.desktop
