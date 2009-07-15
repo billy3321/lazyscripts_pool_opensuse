@@ -1,7 +1,7 @@
 #!/bin/bash
 # -*- coding: utf-8 -*-
 # Copyright (C) 2009 張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>
-# Last Modified: 18 May 2009
+# Last Modified: 15 Jul 2009
 # Released under GNU General Public License
 # Please run as root.
 #
@@ -21,15 +21,17 @@ echo '[1;33;41m 安裝 VirtualBox... [m'
 echo
 
 zypper -n rm virtualbox
+mkdir -p ./temp/vbox
+pushd ./temp/vbox
 
 case "$PLAT_NAME" in
 	'i386'|'i686')
-		echo '正在下載 VirtualBox...'
-		zypper -n in http://download.virtualbox.org/virtualbox/2.2.4/VirtualBox-2.2.4_47978_openSUSE111-1.i586.rpm
+		$WGET http://download.virtualbox.org/virtualbox/3.0.2/VirtualBox-3.0.2_49928_openSUSE111-1.i586.rpm
+		zypper -n in *.rpm
 	;;
 	'x86_64')
-		echo '正在下載 VirtualBox...'
-		zypper -n in http://download.virtualbox.org/virtualbox/2.2.4/VirtualBox-2.2.4_47978_openSUSE111-1.x86_64.rpm
+		$WGET http://download.virtualbox.org/virtualbox/3.0.2/VirtualBox-3.0.2_49928_openSUSE111-1.x86_64.rpm
+		zypper -n in *.rpm
 	;;
 	*)
 		echo
@@ -38,3 +40,5 @@ case "$PLAT_NAME" in
 	;;
 esac
 
+popd
+rm -rf ./temp/vbox
