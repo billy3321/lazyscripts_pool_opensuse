@@ -16,4 +16,4 @@ echo
 echo '[1;33;41m 正在安裝 Flash 外掛... [m'
 echo 
 
-zypper --non-interactive --no-refresh in flash-player libflashsupport pullin-flash-player 
+zypper --non-interactive --no-refresh in --auto-agree-with-licenses flash-player libflashsupport pullin-flash-player 

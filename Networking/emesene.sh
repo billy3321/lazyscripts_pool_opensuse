@@ -22,5 +22,6 @@ zypper --non-interactive --no-refresh install emesene
 
 $WGET 'http://www.emesene.org/trac/raw-attachment/wiki/Plugins/LastSaid.py'
 
+mkdir -p ${REAL_HOME}/.config/emesene1.0/
 mv LastSaid.py ${REAL_HOME}/.config/emesene1.0/LastSaid.py
 
