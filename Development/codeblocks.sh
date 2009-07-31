@@ -21,11 +21,11 @@ echo
 
 case $PLAT_NAME in
 	'i386'|'i686')
-		zypper --non-interactive --no-refresh in http://download.opensuse.org/repositories/devel:/tools:/ide/openSUSE_11.1/i586/codeblocks-r5695-1.1.i586.rpm
+		zypper --non-interactive --no-refresh in http://download.opensuse.org/repositories/devel:/tools:/ide/openSUSE_11.1/i586/codeblocks-r5716-1.1.i586.rpm
 		break;
 	;;
 	'x86_64')
-		zypper --non-interactive --no-refresh in http://download.opensuse.org/repositories/devel:/tools:/ide/openSUSE_11.1/x86_64/codeblocks-r5695-1.1.x86_64.rpm
+		zypper --non-interactive --no-refresh in http://download.opensuse.org/repositories/devel:/tools:/ide/openSUSE_11.1/x86_64/codeblocks-r5716-1.1.x86_64.rpm
 		break;
 	;;
 	*)
