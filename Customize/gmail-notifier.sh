@@ -16,9 +16,9 @@
 # @opensuse ''
 # @platform 'i386 amd64'
 
-download_url_i586='http://download.opensuse.org/repositories/home:/dbornkessel:/gnome/openSUSE_11.1/i586/gnome-gmail-notifier-0.9.4-3.2.i586.rpm'
-lib_url_i586='http://download.opensuse.org/repositories/home:/dbornkessel:/gnome/openSUSE_11.1/i586/libsoup22-2.2.100-46.1.i586.rpm'
-download_url_x86_64='http://download.opensuse.org/repositories/home:/dbornkessel:/gnome/openSUSE_11.1/x86_64/gnome-gmail-notifier-0.9.4-3.2.x86_64.rpm'
+dl_url_i386='http://download.opensuse.org/repositories/home:/dbornkessel:/gnome/openSUSE_11.1/i586/gnome-gmail-notifier-0.9.4-3.2.i586.rpm'
+lib_url_i386='http://download.opensuse.org/repositories/home:/dbornkessel:/gnome/openSUSE_11.1/i586/libsoup22-2.2.100-46.1.i586.rpm'
+dl_url_x86_64='http://download.opensuse.org/repositories/home:/dbornkessel:/gnome/openSUSE_11.1/x86_64/gnome-gmail-notifier-0.9.4-3.2.x86_64.rpm'
 lib_url_x86_64='http://download.opensuse.org/repositories/home:/dbornkessel:/gnome/openSUSE_11.1/x86_64/libsoup22-2.2.100-46.1.x86_64.rpm'
 temp_dir='./temp/gmail_notifier'
 
@@ -32,13 +32,13 @@ pushd $temp_dir
 case "$PLAT_NAME" in
 	'i386'|'i686')
 		echo '正在下載 GNOME Gmail Notifier...'
-		$WGET $download_url_i586
-		$WGET $lib_url_i586
+		$WGET $dl_url_i386
+		$WGET $lib_url_i386
 		zypper -n in *.rpm
 	;;
 	'x86_64')
 		echo '正在下載 GNOME Gmail Notifier...'
-		$WGET $download_url_x86_64
+		$WGET $dl_url_x86_64
 		$WGET $lib_url_x86_64
 		zypper -n in *.rpm
 	;;
