@@ -18,7 +18,7 @@
 
 dl_url_i386='http://download.virtualbox.org/virtualbox/3.0.4/VirtualBox-3.0.4_50677_openSUSE111-1.i586.rpm'
 dl_url_x86_64='http://download.virtualbox.org/virtualbox/3.0.4/VirtualBox-3.0.4_50677_openSUSE111-1.x86_64.rpm'
-temp_dir='./temp/virtualbox'
+#temp_dir='./temp/virtualbox'
 
 echo
 echo '[1;33;41m 安裝 VirtualBox... [m'
@@ -26,19 +26,19 @@ echo
 
 zypper -n rm virtualbox
 
-mkdir -p $temp_dir
-pushd $temp_dir
+#mkdir -p $temp_dir
+#pushd $temp_dir
 
 case "$PLAT_NAME" in
 	'i386'|'i686')
 		echo -e "\n正在下載 VirtualBox..."
-		$WGET $dl_url_i386
-		zypper -n in *.rpm
+#		$WGET $dl_url_i386
+		zypper -n in $dl_url_i386
 	;;
 	'x86_64')
 		echo -e "\n正在下載 VirtualBox"
-		$WGET $dl_url_x86_64
-		zypper -n in *.rpm
+#		$WGET $dl_url_x86_64
+		zypper -n in $dl_url_x86_64
 	;;
 	*)
 		echo
@@ -47,6 +47,6 @@ case "$PLAT_NAME" in
 	;;
 esac
 
-popd
-rm -rf $temp_dir
+#popd
+#rm -rf $temp_dir
 
