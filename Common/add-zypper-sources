@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# @hide
+
 function add_swyear() {
 HAS_SWYEAR=`zypper lr -d | grep "http://download.opensuse.org/repositories/home:/swyear"`
 if [ -z "$HAS_SWYEAR" ]; then
