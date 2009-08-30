@@ -19,6 +19,7 @@
 # @opensuse ''
 # @platform 'i386 AMD64'
 # @child 'Common/cpu-type.py'
+# @hide
 
 CPU=`./cpu-type.py`
 

@@ -26,6 +26,7 @@
 # @ubuntu ''
 # @platform 'i386 AMD64'
 # @child 'Common/add-apt-sources Networking/ie6_seluser.py Networking/ie6_after.sh'
+# @hide
 
 echo '開始安裝 Microsoft Internet Explorer 6.0 中文版...'
 
