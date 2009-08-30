@@ -52,3 +52,4 @@ esac
 popd
 rm -rf $temp_dir
 
+usermod -A vboxusers $REAL_USER
