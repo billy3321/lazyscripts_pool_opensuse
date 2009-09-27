@@ -26,6 +26,9 @@ echo
 
 zypper -n rm virtualbox
 
+# For recompiler driver
+zypper -n in kernel-source
+
 mkdir -p $temp_dir
 pushd $temp_dir
 
@@ -52,5 +55,6 @@ esac
 popd
 rm -rf $temp_dir
 
+/etc/init.d/vboxdrv setup
 /usr/sbin/usermod -A vboxusers $REAL_USER
 
