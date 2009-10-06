@@ -26,6 +26,7 @@ echo
 
 zypper -n rm virtualbox
 
+# kernel-source is essential package for non-OSE version VirtualBox
 # For recompiler driver
 zypper -n in kernel-source
 
