@@ -16,8 +16,8 @@
 # @opensuse ''
 # @platform 'i386 amd64'
 
-dl_url_i386='http://download.virtualbox.org/virtualbox/3.0.6/VirtualBox-3.0.6_52128_openSUSE111-1.i586.rpm'
-dl_url_x86_64='http://download.virtualbox.org/virtualbox/3.0.6/VirtualBox-3.0.6_52128_openSUSE111-1.x86_64.rpm'
+dl_url_i386='http://download.virtualbox.org/virtualbox/3.0.8/VirtualBox-3.0.8_53138_openSUSE111-1.i586.rpm'
+dl_url_x86_64='http://download.virtualbox.org/virtualbox/3.0.8/VirtualBox-3.0.8_53138_openSUSE111-1.x86_64.rpm'
 temp_dir='./temp/virtualbox'
 
 echo
