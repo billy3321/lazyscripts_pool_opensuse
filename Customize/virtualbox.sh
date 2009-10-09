@@ -58,4 +58,3 @@ rm -rf $temp_dir
 
 /etc/init.d/vboxdrv setup
 /usr/sbin/usermod -A vboxusers $REAL_USER
-
