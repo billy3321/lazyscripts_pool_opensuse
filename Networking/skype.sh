@@ -16,7 +16,7 @@
 # @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @author '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @license 'GPL'
-# @openSUSE ''
+# @opensuse ''
 # @platform 'i386 AMD64'
 # @child 'Common/add-zypper-sources'
 
