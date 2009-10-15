@@ -55,10 +55,10 @@ fi
 function add_devel_tools_ide() {
 HAS_STD=`zypper lr -d | grep "http://download.opensuse.org/repositories/devel:/tools:/ide/${DISTRIB_ID}_${DISTRIB_VERSION}"`
 if [ -z "$HAS_STD" ]; then
-    zypper -n ar http://download.opensuse.org/repositories/devel:/tools:/ide/${DISTRIB_ID}_${DISTRIB_VERSION} devel_tools_ide
+    zypper -n ar http://download.opensuse.org/repositories/devel:/tools:/ide/${DISTRIB_ID}_${DISTRIB_VERSION} devel:tools:ide
 	rpm --import http://download.opensuse.org/repositories/devel:/tools:/ide/${DISTRIB_ID}_${DISTRIB_VERSION}/repodata/repomd.xml.key
 else
-    echo 'devel_tools_ide 套件庫已經存在'
+    echo 'devel:tools:ide 套件庫已經存在'
 fi
 }
 
