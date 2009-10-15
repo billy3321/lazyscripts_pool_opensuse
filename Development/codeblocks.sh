@@ -14,22 +14,28 @@
 # @license 'GPL'
 # @opensuse ''
 # @platform 'i386 amd64'
+# @child 'Common/add-zypper-sources'
+
+source add-zypper-sources
+add_devel_tools_ide
 
 echo
 echo '[1;33;41m 安裝 Code::Block... [m'
 echo
 
-case $PLAT_NAME in
-	'i386'|'i686')
-		zypper --non-interactive --no-refresh in http://download.opensuse.org/repositories/devel:/tools:/ide/openSUSE_11.1/i586/codeblocks-r5716-1.1.i586.rpm
-		break;
-	;;
-	'x86_64')
-		zypper --non-interactive --no-refresh in http://download.opensuse.org/repositories/devel:/tools:/ide/openSUSE_11.1/x86_64/codeblocks-r5716-1.1.x86_64.rpm
-		break;
-	;;
-	*)
-		echo "Code::Block 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
-	;;
-esac
+zypper -n in codeblocks
+
+#case $PLAT_NAME in
+#	'i386'|'i686')
+#		zypper --non-interactive --no-refresh in codeblocks
+#		break;
+#	;;
+#	'x86_64')
+#		zypper --non-interactive --no-refresh in codeblocks
+#		break;
+#	;;
+#	*)
+#		echo "Code::Block 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
+#	;;
+#esac
 
