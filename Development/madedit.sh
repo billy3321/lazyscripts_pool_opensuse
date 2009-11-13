@@ -20,12 +20,12 @@
 # @platform 'i386 AMD64'
 # @child 'Common/add-zypper-sources'
 
-source add-zypper-sources
-add_swyear
-
 echo
 echo '[1;33;41m 安裝 MadEdit... [m'
 echo 
+
+source add-zypper-sources
+add_swyear
 
 zypper -n install madedit
 

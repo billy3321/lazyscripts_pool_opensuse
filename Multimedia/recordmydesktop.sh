@@ -13,10 +13,14 @@
 # @license 'GPL'
 # @opensuse ''
 # @platform 'i386 amd64'
+# @child 'Common/add-zypper-sources'
 
 echo
 echo '[1;33;41m 安裝 recordMyDesktop... [m'
 echo
+
+source add-zypper-sources
+add_packman
 
 zypper --non-interactive --no-refresh in recordmydesktop
 

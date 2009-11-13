@@ -15,14 +15,20 @@
 # @license 'GPL'
 # @opensuse ''
 # @platform 'i386 amd64'
+# @child 'Common/add-zypper-sources'
 
-dl_url_i386='http://download.virtualbox.org/virtualbox/3.0.8/VirtualBox-3.0.8_53138_openSUSE111-1.i586.rpm'
-dl_url_x86_64='http://download.virtualbox.org/virtualbox/3.0.8/VirtualBox-3.0.8_53138_openSUSE111-1.x86_64.rpm'
-temp_dir='./temp/virtualbox'
+#--------------------------------------------------
+# dl_url_i386='http://download.virtualbox.org/virtualbox/3.0.8/VirtualBox-3.0.8_53138_openSUSE111-1.i586.rpm'
+# dl_url_x86_64='http://download.virtualbox.org/virtualbox/3.0.8/VirtualBox-3.0.8_53138_openSUSE111-1.x86_64.rpm'
+# temp_dir='./temp/virtualbox'
+#-------------------------------------------------- 
 
 echo
 echo '[1;33;41m 安裝 VirtualBox... [m'
 echo
+
+source add-zypper-sources
+add_virtualbox
 
 zypper -n rm virtualbox
 
@@ -30,31 +36,35 @@ zypper -n rm virtualbox
 # For recompiler driver
 zypper -n in kernel-source
 
-mkdir -p $temp_dir
-pushd $temp_dir
+zypper -n in virtualbox
 
-case "$PLAT_NAME" in
-	'i386'|'i686')
-		echo -e "\n正在下載 VirtualBox..."
-		$WGET $dl_url_i386
-		mv * vbox.rpm
-		zypper -n in vbox.rpm
-	;;
-	'x86_64')
-		echo -e "\n正在下載 VirtualBox"
-		$WGET $dl_url_x86_64
-		mv * vbox.rpm
-		zypper -n in vbox.rpm
-	;;
-	*)
-		echo
-		echo '[31m VirtualBox 目前不支援 $PLAT_NAME 硬體架構，取消安裝。[m'
-		echo
-	;;
-esac
-
-popd
-rm -rf $temp_dir
+#--------------------------------------------------
+# mkdir -p $temp_dir
+# pushd $temp_dir
+# 
+# case "$PLAT_NAME" in
+# 	'i386'|'i686')
+# 		echo -e "\n正在下載 VirtualBox..."
+# 		$WGET $dl_url_i386
+# 		mv * vbox.rpm
+# 		zypper -n in vbox.rpm
+# 	;;
+# 	'x86_64')
+# 		echo -e "\n正在下載 VirtualBox"
+# 		$WGET $dl_url_x86_64
+# 		mv * vbox.rpm
+# 		zypper -n in vbox.rpm
+# 	;;
+# 	*)
+# 		echo
+# 		echo '[31m VirtualBox 目前不支援 $PLAT_NAME 硬體架構，取消安裝。[m'
+# 		echo
+# 	;;
+# esac
+# 
+# popd
+# rm -rf $temp_dir
+#-------------------------------------------------- 
 
 /etc/init.d/vboxdrv setup
 /usr/sbin/usermod -A vboxusers $REAL_USER
