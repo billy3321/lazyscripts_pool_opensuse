@@ -87,9 +87,11 @@ if [ -z "$HAS_GOOGLE" ]; then
 	case "$PLAT_NAME" in
 		'i386'|'i586')
 			zypper sa -t YUM http://dl.google.com/linux/rpm/stable/i386 google
+			rpm --import https://dl-ssl.google.com/linux/linux_signing_key.pub
 		;;
 		'x86_64')
 			zypper sa -t YUM http://dl.google.com/linux/rpm/stable/x86_64 google64
+			rpm --import https://dl-ssl.google.com/linux/linux_signing_key.pub
 		;;
 		*)
 			echo '找不到 $PLAT_NAME 套件庫'
