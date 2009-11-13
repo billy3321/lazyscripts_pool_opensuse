@@ -5,8 +5,8 @@
 function add_swyear() {
 HAS_SWYEAR=`zypper lr -d | grep "http://download.opensuse.org/repositories/home:/swyear"`
 if [ -z "$HAS_SWYEAR" ]; then
-    zypper -n ar http://download.opensuse.org/repositories/home:/swyear/${DISTRIB_ID}_${DISTRIB_VERSION} swyear
-	rpm --import http://download.opensuse.org/repositories/home:/swyear/${DISTRIB_ID}_${DISTRIB_VERSION}/repodata/repomd.xml.key
+    zypper -n ar http://download.opensuse.org/repositories/home:/swyear/${DISTRO_ID}_${DISTRO_VERSION} swyear
+	rpm --import http://download.opensuse.org/repositories/home:/swyear/${DISTRO_ID}_${DISTRO_VERSION}/repodata/repomd.xml.key
 else
     echo 'Swyear 套件庫已經存在'
 fi
@@ -15,8 +15,8 @@ fi
 function add_lxde() {
 HAS_LXDE=`zypper lr -d | grep "http://download.opensuse.org/repositories/X11:/lxde"`
 if [ -z "$HAS_LXDE" ]; then
-    zypper -n ar http://download.opensuse.org/repositories/X11:/lxde/${DISTRIB_ID}_${DISTRIB_VERSION} LXDE
-	rpm --import http://download.opensuse.org/repositories/X11:/lxde/${DISTRIB_ID}_${DISTRIB_VERSION}/repodata/repomd.xml.key
+    zypper -n ar http://download.opensuse.org/repositories/X11:/lxde/${DISTRO_ID}_${DISTRO_VERSION} LXDE
+	rpm --import http://download.opensuse.org/repositories/X11:/lxde/${DISTRO_ID}_${DISTRO_VERSION}/repodata/repomd.xml.key
 else
     echo 'LXDE 套件庫已經存在'
 fi
@@ -25,8 +25,8 @@ fi
 function add_Education() {
 HAS_EDU=`zypper lr -d | grep "http://download.opensuse.org/repositories/Education"`
 if [ -z "$HAS_EDU" ]; then
-    zypper -n ar http://download.opensuse.org/repositories/Education/${DISTRIB_ID}_${DISTRIB_VERSION} Education
-	rpm --import http://download.opensuse.org/repositories/Education/${DISTRIB_ID}_${DISTRIB_VERSION}/repodata/repomd.xml.key
+    zypper -n ar http://download.opensuse.org/repositories/Education/${DISTRO_ID}_${DISTRO_VERSION} Education
+	rpm --import http://download.opensuse.org/repositories/Education/${DISTRO_ID}_${DISTRO_VERSION}/repodata/repomd.xml.key
 else
     echo 'Education 套件庫已經存在'
 fi
@@ -35,28 +35,28 @@ fi
 function add_packman() {
 HAS_PACKMAN=`zypper lr -d | grep "http://packman.mirrors.skynet.be/pub/packman/suse"`
 if [ -z "$HAS_PACKMAN" ]; then
-    zypper -n ar http://packman.mirrors.skynet.be/pub/packman/suse/${DISTRIB_VERSION} Packman Repository
-	rpm --import http://packman.mirrors.skynet.be/pub/packman/suse/${DISTRIB_VERSION}/gpg-pubkey-1abd1afb.asc
+    zypper -n ar http://packman.mirrors.skynet.be/pub/packman/suse/${DISTRO_VERSION} Packman Repository
+	rpm --import http://packman.mirrors.skynet.be/pub/packman/suse/${DISTRO_VERSION}/gpg-pubkey-1abd1afb.asc
 else
     echo 'Packman 套件庫已經存在'
 fi
 }
 
 function add_standard() {
-HAS_STD=`zypper lr -d | grep "http://download.opensuse.org/repositories/${DISTRIB_ID}:/${DISTRIB_VERSION}:/Live/standard"`
+HAS_STD=`zypper lr -d | grep "http://download.opensuse.org/repositories/${DISTRO_ID}:/${DISTRO_VERSION}:/Live/standard"`
 if [ -z "$HAS_STD" ]; then
-    zypper -n ar http://download.opensuse.org/repositories/${DISTRIB_ID}:/${DISTRIB_VERSION}:/Live/standard standard
-	rpm --import http://download.opensuse.org/repositories/${DISTRIB_ID}:/${DISTRIB_VERSION}:/Live/standard/repodata/repomd.xml.key
+    zypper -n ar http://download.opensuse.org/repositories/${DISTRO_ID}:/${DISTRO_VERSION}:/Live/standard standard
+	rpm --import http://download.opensuse.org/repositories/${DISTRO_ID}:/${DISTRO_VERSION}:/Live/standard/repodata/repomd.xml.key
 else
     echo 'Standard 套件庫已經存在'
 fi
 }
 
 function add_devel_tools_ide() {
-HAS_DTI=`zypper lr -d | grep "http://download.opensuse.org/repositories/devel:/tools:/ide/${DISTRIB_ID}_${DISTRIB_VERSION}"`
+HAS_DTI=`zypper lr -d | grep "http://download.opensuse.org/repositories/devel:/tools:/ide/${DISTRO_ID}_${DISTRO_VERSION}"`
 if [ -z "$HAS_DTI" ]; then
-    zypper -n ar http://download.opensuse.org/repositories/devel:/tools:/ide/${DISTRIB_ID}_${DISTRIB_VERSION} devel:tools:ide
-	rpm --import http://download.opensuse.org/repositories/devel:/tools:/ide/${DISTRIB_ID}_${DISTRIB_VERSION}/repodata/repomd.xml.key
+    zypper -n ar http://download.opensuse.org/repositories/devel:/tools:/ide/${DISTRO_ID}_${DISTRO_VERSION} devel:tools:ide
+	rpm --import http://download.opensuse.org/repositories/devel:/tools:/ide/${DISTRO_ID}_${DISTRO_VERSION}/repodata/repomd.xml.key
 else
     echo 'devel:tools:ide 套件庫已經存在'
 fi
