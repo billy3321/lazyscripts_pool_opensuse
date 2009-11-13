@@ -35,7 +35,7 @@ fi
 function add_packman() {
 HAS_PACKMAN=`zypper lr -d | grep "http://packman.mirrors.skynet.be/pub/packman/suse"`
 if [ -z "$HAS_PACKMAN" ]; then
-    zypper -n ar http://packman.mirrors.skynet.be/pub/packman/suse/${DISTRO_VERSION} Packman Repository
+    zypper -n ar http://packman.mirrors.skynet.be/pub/packman/suse/${DISTRO_VERSION} Packman_Repository
 	rpm --import http://packman.mirrors.skynet.be/pub/packman/suse/${DISTRO_VERSION}/gpg-pubkey-1abd1afb.asc
 else
     echo 'Packman 套件庫已經存在'
