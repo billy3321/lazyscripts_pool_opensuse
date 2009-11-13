@@ -15,6 +15,10 @@
 # @license 'GPL'
 # @openSUSE ''
 # @platform 'i386 amd64'
+# @child 'Common/add-zypper-sources'
+
+source add-zypper-sources
+add-packman
 
 echo
 echo '[1;33;41m 安裝 VLC Media Player... [m'
