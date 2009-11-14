@@ -72,14 +72,16 @@ else
 fi
 }
 
-function add_virtualbox(){
-HAS_VBOX=`zypper lr -d | grep "http://download.virtualbox.org/virtualbox/rpm/opensuse/"`
-if [ -z "$HAS_VBOX" ]; then
-	zypper -n ar --repo http://download.virtualbox.org/virtualbox/rpm/opensuse/11.1/virtualbox.repo
-else
-	echo 'VirtualBox 套件庫已經存在'
-fi
-}
+#--------------------------------------------------
+# function add_virtualbox(){
+# HAS_VBOX=`zypper lr -d | grep "http://download.virtualbox.org/virtualbox/rpm/opensuse/"`
+# if [ -z "$HAS_VBOX" ]; then
+# 	zypper -n ar --repo http://download.virtualbox.org/virtualbox/rpm/opensuse/11.1/virtualbox.repo
+# else
+# 	echo 'VirtualBox 套件庫已經存在'
+# fi
+# }
+#-------------------------------------------------- 
 
 function add_google() {
 HAS_GOOGLE=`zypper lr -d | grep "zypper sa -t YUM http://dl.google.com/linux/rpm/stable/"`
