@@ -31,7 +31,7 @@ zypper -n install google-chrome
 cp /opt/google/chrome/google-chrome.desktop /usr/share/applications/google-chrome.desktop
 
 echo
-echo '[1;33;41m 安裝 Flash 支援... [m'
+echo '安裝 Flash 支援...'
 echo
 
 ln -s /usr/lib/browser-plugins/ /opt/google/chrome/plugins
