@@ -28,3 +28,5 @@ add_google
 
 zypper -n install google-chrome
 
+cp /opt/google/chrome/google-chrome.desktop /usr/share/applications/google-chrome.desktop
+
