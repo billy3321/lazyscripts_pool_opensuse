@@ -3,7 +3,6 @@
 # Copyright (C) 2009 張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>
 # Last Modified: 27 Feb 2009
 # Released under GNU General Public License
-# Download and install madedit for i686 and x86_64 ubuntu
 # Please run as root.
 #
 # @name_enUS 'Install Google Chrome' 

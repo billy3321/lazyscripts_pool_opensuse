@@ -25,17 +25,4 @@ add_devel_tools_ide
 
 zypper -n in codeblocks
 
-#case $PLAT_NAME in
-#	'i386'|'i686')
-#		zypper --non-interactive --no-refresh in codeblocks
-#		break;
-#	;;
-#	'x86_64')
-#		zypper --non-interactive --no-refresh in codeblocks
-#		break;
-#	;;
-#	*)
-#		echo "Code::Block 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
-#	;;
-#esac
 
