@@ -15,7 +15,7 @@
 # @maintaner '林哲瑋 Zhe-Wei Lin (billy3321,雨蒼) <billy3321 -AT- gmail.com>'
 # @author '洪任諭(PCMan) <pcman.tw -AT- gmail.com>'
 # @license 'GPL'
-# @opensuse
+# @opensuse '11.0 11.1 11.2'
 # @platform 'i386 AMD64'
 # @child 'Common/add-zypper-sources'
 

@@ -12,7 +12,7 @@
 # @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @author '張君平 (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @license 'GPL'
-# @opensuse ''
+# @opensuse '11.0 11.1 11.2'
 # @platform 'i386 AMD64'
 
 download_url='http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/9.1/enu/AdbeRdr9.1.0-1_i486linux_enu.bin'

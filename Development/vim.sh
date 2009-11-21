@@ -14,7 +14,8 @@
 # @author    '林佑安 c9s (Cornelius) <cornelius.howl _at_ gmail.com>'
 # @license   'GPL'
 # @debian
-# @ubuntu 
+# @ubuntu
+# @opensuse ''
 # @platform 'i386 amd64'
 
 echo

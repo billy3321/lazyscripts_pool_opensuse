@@ -19,7 +19,7 @@
 # @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @author '洪任諭 Hong Jen Yee (PCMan) <pcman.tw@gmail.com>'
 # @license 'GPL'
-# @openSUSE ''
+# @opensuse '11.0 11.1 11.2'
 # @platform 'i386 amd64'
 
 

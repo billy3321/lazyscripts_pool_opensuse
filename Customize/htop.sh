@@ -12,7 +12,7 @@
 # @maintaner '王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>'
 # @author '王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>'
 # @license 'GPL'
-# @opensuse
+# @opensuse '11,0 11.1 11.2'
 # @platform 'i386 amd64'
 
 echo

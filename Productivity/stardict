@@ -15,7 +15,7 @@
 # @author '洪任諭 (PCMan) <pcman.tw@gmail.com>'
 # @author '朱昱任 (Yuren Ju) <yurenju -AT- gmail.com>'
 # @license 'GPL'
-# @opensuse ''
+# @opensuse '11.0 11.1 11.2'
 # @platform 'i386 AMD64'
 
 download_url_prefix='http://nchc.dl.sourceforge.net/sourceforge/stardict/'
