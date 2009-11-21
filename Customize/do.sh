@@ -24,7 +24,7 @@ echo
 source add-zypper-sources
 add_gnome_factory
 
-zypper -n rm gnome-do gnome-do-lang gnome-do-plugins gnome-do-plugins-lang gnome-doc-utils gnome-docker
+zypper -n in gnome-do gnome-do-lang gnome-do-plugins gnome-do-plugins-lang gnome-docker
 
 #--------------------------------------------------
 # case "$PLAT_NAME" in
