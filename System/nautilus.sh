@@ -9,7 +9,7 @@
 # @name_zhTW '安裝數個 nautilus 外掛'
 # @desc_enUS ''
 # @desc_zhTW ''
-# @category ''
+# @category 'System'
 # @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @author '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @license 'GPL'

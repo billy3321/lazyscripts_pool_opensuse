@@ -8,7 +8,7 @@
 # @desc_zhTW 'Htop 是一個輕量化的系統行程管理工具，簡單的介面可以清楚的瞭解目前系統行程狀態，是除了系統預設行程管理的另一個不錯的行程。'
 # @warn_enUS ''
 # @warn_zhTW ''
-# @category 'Customize'
+# @category 'System'
 # @maintaner '王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>'
 # @author '王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>'
 # @license 'GPL'

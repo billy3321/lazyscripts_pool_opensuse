@@ -9,7 +9,7 @@
 #
 # @name_zhTW '安裝 Windows 下幾種常見壓縮檔格式的支援'
 # @desc_zhTW '安裝 Windows 下幾種常見壓縮檔格式的支援，如7-zip, rar,...等'
-# @category 'Customize'
+# @category 'System'
 # @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @author '2007 洪任諭(PCMan) <pcman.tw -AT- gmail.com>'
 # @license 'GPL'
