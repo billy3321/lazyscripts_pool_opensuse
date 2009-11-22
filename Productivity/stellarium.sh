@@ -32,18 +32,16 @@ case "$PLAT_NAME" in
 	'i386'|'i686')
 		echo -e "\n正在下載 Stellarium..."
 		$WGET $dl_url_i386
-		mv * ./stellarium.rpm
-		zypper -n in stellarium.rpm
+		zypper -n in *.rpm
 		;;
 	'x86_64')
 		echo -e "\n正在下載 Stellarium..."
 		$WGET $dl_url_x86_64
-		mv * ./stellarium.rpm
-		zypper -n in stellarium.rpm
+		zypper -n in *.rpm
 		;;
 	*)
 		echo
-		echo '^[[31m VirtualBox 目前不支援 $PLAT_NAME 硬體架構，取消安裝。^[[m'
+		echo '^[[31m Stellarium 目前不支援 $PLAT_NAME 硬體架構，取消安裝。^[[m'
 		echo
 		;;
 esac
