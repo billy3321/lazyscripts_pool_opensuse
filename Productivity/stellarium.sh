@@ -26,7 +26,7 @@ echo '[1;33;41m 安裝 Stellarium... [m'
 echo 
 
 mkdir -p $temp_dir
-pushd $temo_dir
+pushd $temp_dir
 
 case "$PLAT_NAME" in
 	'i386'|'i686')
