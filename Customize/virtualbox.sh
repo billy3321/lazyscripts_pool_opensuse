@@ -37,13 +37,13 @@ case "$PLAT_NAME" in
 	'i386'|'i686')
 		echo -e "\n正在下載 VirtualBox..."
 		$WGET $dl_url_i386
-		mv * vbox.rpm
+		mv * ./vbox.rpm
 		zypper -n in vbox.rpm
 	;;
 	'x86_64')
 		echo -e "\n正在下載 VirtualBox"
 		$WGET $dl_url_x86_64
-		mv * vbox.rpm
+		mv * ./vbox.rpm
 		zypper -n in vbox.rpm
 	;;
 	*)
