@@ -32,13 +32,13 @@ case "$PLAT_NAME" in
 	'i386'|'i686')
 		echo -e "\n正在下載 Stellarium..."
 		$WGET $dl_url_i386
-		mv * stellarium.rpm
+		mv * ./stellarium.rpm
 		zypper -n in stellarium.rpm
 		;;
 	'x86_64')
 		echo -e "\n正在下載 Stellarium..."
 		$WGET $dl_url_x86_64
-		mv * stellarium.rpm
+		mv * ./stellarium.rpm
 		zypper -n in stellarium.rpm
 		;;
 	*)
