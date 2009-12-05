@@ -16,7 +16,6 @@
 # @opensuse '11.0 11.1 11.2'
 # @platform 'i386 AMD64'
 # @child 'Common/add-zypper-sources'
-# @hide
 
 dl_url_i386='http://download.opensuse.org/repositories/Education/openSUSE_11.2/i586/stellarium-0.10.2-26.1.i586.rpm'
 dl_url_x86_64='http://download.opensuse.org/repositories/Education/openSUSE_11.2/x86_64/stellarium-0.10.2-26.1.x86_64.rpm'
